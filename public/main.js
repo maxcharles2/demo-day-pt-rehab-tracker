@@ -88,13 +88,14 @@ Array.from(updateNotesBtn).forEach(function(element) {
     // const notesVal = document.querySelector('.notes').innerText;
     const notesVal = document.querySelector('.notes').innerText;
     const newNotesVal = document.querySelector('.newNotesVal').value;
+    const exerciseId = exerciseItem.getAttribute('data-id');
     console.log("this is the innerText", newNotesVal, "this is the original notes value", notesVal, "this is the element", document.querySelector('.newNotesVal'))
     
     fetch('newNotes', {
       method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        // '_id': courseId,
+        '_id': exerciseId,
         'userName': userNameVal,
         'notes': notesVal,
         'newNotes': newNotesVal

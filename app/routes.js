@@ -76,7 +76,7 @@ module.exports = function(app, passport, db) {
       
       console.log(req.body, "this is the request body")
       db.collection('exercises')
-      .findOneAndUpdate({ notesDB: req.body.notes }, {
+      .findOneAndUpdate({ _id: ObjectId(req.body._id) }, {
         $set: {
           notesDB: req.body.newNotes
         }
