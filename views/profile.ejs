@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <title>Physical Therapy Rehab Tracker Site</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1 class="gray"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M96 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 160 0 64 0 160c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-64-32 0c-17.7 0-32-14.3-32-32l0-64c-17.7 0-32-14.3-32-32s14.3-32 32-32l0-64c0-17.7 14.3-32 32-32l32 0 0-64zm448 0l0 64 32 0c17.7 0 32 14.3 32 32l0 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 64c0 17.7-14.3 32-32 32l-32 0 0 64c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-160 0-64 0-160c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32zM416 224l0 64-192 0 0-64 192 0z"/></svg> Physical Therapy Rehab Tracker</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <!-- <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div> -->
+        <div class="col-sm-6">
+          <h3 class="gray">Rehab exercises</h3>
+          <ul class="exerciseListContainer">
+          <% for(var i=0; i<exerciseList.length; i++) {%>
+            <li class="exerciseItem" data-id="<%= exerciseList[i]._id %>"> <%# id stored in data-id attribute %>
+              <span class="gray userName">User: <%= exerciseList[i].userNameDB %></span>
+              <span class="gray phase">Current phase: <%= exerciseList[i].phaseDB %></span>
+              <span class="gray dayOfTheWeek">Day of the week: <%= exerciseList[i].dayOfTheWeekDB %></span>
+              <span class="gray exerciseName">Exercise name: <%= exerciseList[i].exerciseNameDB %></span>
+              <div>
+                <span class="gray sets"><%= exerciseList[i].setsDB %> x</span>
+                <span class="gray reps"><%= exerciseList[i].repsDB %></span>
+              </div>
+              <span class="gray notes">Review: <%= exerciseList[i].notesDB %></span>
+              <span class="gray thumbUp">Total upvotes: <%= exerciseList[i].thumbUpDB %></span>
+              <div>
+                <input type="text" placeholder="Change notes" name="updateNotesFromInput" class="newNotesVal">
+                <button class="updateNotesBtn">Edit</button>
+              </div>
+              <div>
+                <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+                <span><i class="fa fa-trash-o"></i></span>
+              </div>
+            </li>
+          <% } %>
+          </ul>
+
+          <h2 class="gray">Add a rehab exercise to the list</h2>
+        <% if (user.local.email) { %>
+          <form action="/messages" method="POST" class="exerciseListForm">
+            <input type="text" placeholder="username" value="<%= user.local.email %>" name="userNameFromForm">
+            <input type="text" placeholder="Current phase" name="phaseFromForm">
+            <input type="text" placeholder="Day of the week" name="dayOfTheWeekFromForm">
+            <input type="text" placeholder="Exercise name" name="exerciseNameFromForm" id="">
+            <input type="number" placeholder="Sets" name="setsFromForm" id="">
+            <input type="number" placeholder="Reps" name="repsFromForm" id="">
+            <input type="text" placeholder="Notes" name="notesFromForm">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
