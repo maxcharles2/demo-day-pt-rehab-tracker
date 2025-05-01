@@ -1,5 +1,5 @@
 body{
-  background-color: #AAAAAA;
+  background-color: rgb(65, 83, 187);
   padding-top:80px;
   word-wrap:break-word;
 }
@@ -11,10 +11,6 @@ img{
 svg {
   fill: #F2F2F2;
   width: 35px;
-}
-
-.gray {
-  color: #F2F2F2;
 }
 
 .exerciseListForm {
@@ -29,4 +25,34 @@ svg {
   border: 2px solid #F5F5DC;
   border-radius: 16px;
   align-items: center;
+}
+
+.form {
+  background-color: #fff;
+  padding: 16px; /*1 rem*/
+  border-radius: 8px; /* 0.5 rem*/
+  box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.gray {
+  color: #F2F2F2;
+}
+
+.submit {
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #4F46E5;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  width: 100%;
+  text-transform: uppercase;
 }
