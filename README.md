@@ -58,6 +58,5 @@ A full-stack web application designed to help physical therapy patients and ther
 
 8. **Role (physical therapist)**
    
-   If you are a physical therapist, enter out the field exercises to keep an inventory of the exercises that you want to use. Next fill out the other field for the plan so your plan can   
-   appear on the screen for your patient. Patients will be able to add notes for your feedback so if that's needed fill out the fields and press the button to update the field as needed.
+   If you are a physical therapist, enter out the field exercises to keep an inventory of the exercises that you want to use. Next fill out the other field for the plan so your plan can appear on the screen for your patient. Patients will be able to add notes for your feedback so if that's needed fill out the fields and press the button to update the field as needed.
 
